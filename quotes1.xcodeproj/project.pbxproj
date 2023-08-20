@@ -20,6 +20,7 @@
 		5A93122A2A91E9E000996D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A93122D2A91E9E000996D86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A93122F2A91E9E000996D86 /* quotes1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = quotes1.entitlements; sourceTree = "<group>"; };
+		5A9312352A91ED1100996D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 		5A9312252A91E9DD00996D86 /* quotes1 */ = {
 			isa = PBXGroup;
 			children = (
+				5A9312352A91ED1100996D86 /* Info.plist */,
 				5A9312262A91E9DD00996D86 /* quotes1App.swift */,
 				5A9312282A91E9DD00996D86 /* ContentView.swift */,
 				5A93122A2A91E9E000996D86 /* Assets.xcassets */,
@@ -279,6 +281,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = quotes1/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +309,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = quotes1/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

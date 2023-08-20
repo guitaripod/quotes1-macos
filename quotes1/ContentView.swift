@@ -1,23 +1,39 @@
-//
-//  ContentView.swift
-//  quotes1
-//
-//  Created by Marcus Ziadé on 20.8.2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var quotes: [Quote] = []
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(quotes) { quote in
+            VStack(alignment: .leading) {
+                Text(quote.quote)
+                    .font(.headline)
+                Text(quote.author)
+                    .font(.subheadline)
+            }
         }
-        .padding()
+        .task {
+            await getQuotes()
+        }
+    }
+    
+    func getQuotes() async {
+        let url = URL(string: "http://127.0.0.1:8080/quotes")!
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            quotes = try JSONDecoder().decode([Quote].self, from: data)
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
     }
 }
+
+struct Quote: Codable, Identifiable {
+    var id: UUID { UUID() }
+    let quote, author: String
+}
+
 
 #Preview {
     ContentView()
